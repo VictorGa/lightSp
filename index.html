@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="UTF-8">
+	<title></title>
+	<script type="text/javascript" charset="utf-8" async="" src="LightManager.js"></script>
+	<script type="text/javascript" charset="utf-8" async="" src="LightSpritesheet.js"></script>
+
+</head>
+<body>
+<script>
+	window.onload = function(){
+		var manager = LightManager.create({fps:25, stage: {width: 200, height:200, canvas:document.getElementById('myCanvas')}});
+		var sprites = LightSpritesheet.create({
+			cols: 9,
+			frames: {count: 9, width: 50, height: 72, src: "dude_animation_sheet.png"},
+			loop:true
+		});
+
+		manager.add(sprites);
+		manager.start();
+	}
+</script>
+	<canvas id="myCanvas" width="200" height="200"></canvas>
+</body>
+</html>
