@@ -21,9 +21,9 @@ var LightSpritesheet =
 		return self;
 	},
 
-	init: function()
+	setContext: function(ctx)
 	{
-
+		this.ctx = ctx;
 	},
 
 	draw: function(timestamp, ctx)
@@ -46,9 +46,7 @@ var LightSpritesheet =
 		this.currentSpriteProps.y = this.currentSpriteProps.iY * this.options.frames.height;
 
 		// Draw mask
-		//this.ctx.drawImage( this.spritesheet, this.currentSpriteProps.x, this.currentSpriteProps.y, this.options.frames.width, this.options.frames.height, this.options.x, this.options.y, this.options.frames.width * self.scale, this.options.frames.height*self.scale );
-		ctx.clearRect(0, 0, this.options.frames.width * this.scale, this.options.frames.height * this.scale );
-		ctx.drawImage( this.spritesheet, this.currentSpriteProps.x, this.currentSpriteProps.y, this.options.frames.width, this.options.frames.height, 0, 0, this.options.frames.width * this.scale, this.options.frames.height * this.scale );
+		this.ctx.drawImage( this.spritesheet, this.currentSpriteProps.x, this.currentSpriteProps.y, this.options.frames.width, this.options.frames.height,this.options.x, this.options.y, this.options.frames.width * this.scale, this.options.frames.height * this.scale );
 	},
 
 	setDirection: function( direction )

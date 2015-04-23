@@ -20,6 +20,7 @@ var LightManager =
 
 	add: function( child )
 	{
+		child.setContext(this.ctx);
 		this.children.push( child );
 	},
 
@@ -64,11 +65,14 @@ var LightManager =
 		// if enough time has elapsed, draw the next frame
 		if( elapsed > this.fpsInterval )
 		{
+			this.ctx.clearRect(0, 0, this.options.stage.canvas.width, this.options.stage.canvas.height );
+
 			var length = this.children.length;
 			while(length--)
 			{
-				this.children[length].draw(timestamp, this.ctx);
+				this.children[length].draw(timestamp);
 			}
+
 			this.then = timestamp - (elapsed % this.fpsInterval);
 		}
 		requestAnimationFrame( this._update );

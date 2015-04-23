@@ -14,10 +14,21 @@
 		var sprites = LightSpritesheet.create({
 			cols: 9,
 			frames: {count: 9, width: 50, height: 72, src: "dude_animation_sheet.png"},
-			loop:true
+			loop:true,
+			x: 0,
+			y: 0
+		});
+
+		var sprites2 = LightSpritesheet.create({
+			cols: 9,
+			frames: {count: 9, width: 50, height: 72, src: "dude_animation_sheet.png"},
+			loop:true,
+			x: 10,
+			y: 20
 		});
 
 		manager.add(sprites);
+		manager.add(sprites2);
 		manager.start();
 	}
 </script>
