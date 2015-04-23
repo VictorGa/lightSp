@@ -19,16 +19,15 @@
 			y: 0
 		});
 
-		var sprites2 = LightSpritesheet.create({
-			cols: 9,
-			frames: {count: 9, width: 50, height: 72, src: "dude_animation_sheet.png"},
-			loop:true,
-			x: 10,
-			y: 20
-		});
+		var sprites2 = Object.create(sprites);
+		sprites2.x = 100;
+
+		var sprites3 = Object.create(sprites2);
+		sprites3.y = 100;
 
 		manager.add(sprites);
 		manager.add(sprites2);
+		manager.add(sprites3);
 		manager.start();
 	}
 </script>

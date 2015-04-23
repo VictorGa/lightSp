@@ -18,6 +18,9 @@ var LightSpritesheet =
 		self.direction = 1;
 		self.scale = 1;
 
+		self.x = self.options.x;
+		self.y = self.options.y;
+
 		return self;
 	},
 
@@ -46,7 +49,7 @@ var LightSpritesheet =
 		this.currentSpriteProps.y = this.currentSpriteProps.iY * this.options.frames.height;
 
 		// Draw mask
-		this.ctx.drawImage( this.spritesheet, this.currentSpriteProps.x, this.currentSpriteProps.y, this.options.frames.width, this.options.frames.height,this.options.x, this.options.y, this.options.frames.width * this.scale, this.options.frames.height * this.scale );
+		this.ctx.drawImage( this.spritesheet, this.currentSpriteProps.x, this.currentSpriteProps.y, this.options.frames.width, this.options.frames.height,this.x, this.y, this.options.frames.width * this.scale, this.options.frames.height * this.scale );
 	},
 
 	setDirection: function( direction )

@@ -3,16 +3,15 @@ var LightManager =
 	create: function( options )
 	{
 		var self = Object.create( this );
+
 		self.options = options;
 		self._update = self.update.bind( self );
 		self.then = 0;
 		self.fpsInterval = 1000 / self.options.fps;
 		self.rafId = 0;
-
 		self.children = [];
 		self.options.stage.canvas.width = self.options.stage.width;
 		self.options.stage.canvas.height = self.options.stage.height;
-
 		self.ctx = self.options.stage.canvas.getContext('2d');
 
 		return self;
