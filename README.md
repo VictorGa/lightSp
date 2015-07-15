@@ -3,8 +3,8 @@ Small, light library for animations based on spritesheets. Trying to keep all un
 
 # How to use
 You have mainly two objects in this small lib:
-	- LightManager
-	- LightSpritesheet
+	- `LightManager`
+	- `LightSpritesheet`
 
 You can create a scene instantiating LightManager like:
 ```javascript

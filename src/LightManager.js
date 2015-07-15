@@ -6,9 +6,9 @@ var LightManager =
 
 		self.options = options;
 		self._update = self.update.bind( self );
+		self._stop = true;
 		self.then = 0;
 		self.fpsInterval = 1000 / self.options.fps;
-		self.rafId = 0;
 		self.children = [];
 		self.options.stage.canvas.width = self.options.stage.width;
 		self.options.stage.canvas.height = self.options.stage.height;
@@ -48,16 +48,18 @@ var LightManager =
 
 	start: function()
 	{
-		this.rafId = requestAnimationFrame( this._update );
+		this.stop = false;
+		requestAnimationFrame( this._update );
 	},
 
 	stop: function()
 	{
-		cancelRequestAnimationFrame( this.rafId );
+		this._stop = true;
 	},
 
 	update: function( timestamp )
 	{
+		if(this.stop) return;
 		// calc elapsed time since last loop
 		var elapsed = timestamp - this.then;
 
@@ -75,6 +77,16 @@ var LightManager =
 			this.then = timestamp - (elapsed % this.fpsInterval);
 		}
 		requestAnimationFrame( this._update );
+	},
+
+	destroy: function ()
+	{
+		this.stop();
+		if(this.children) {
+			while(this.children.length) {
+				this.children.pop();
+			}
+		}
 	}
 
 };
