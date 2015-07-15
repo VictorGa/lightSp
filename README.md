@@ -12,6 +12,7 @@ var manager = LightManager.create({fps:25, stage: {width: 200, height:200, canva
 ```
 
 Create a spritesheet:
+```javascript
 var sprites = LightSpritesheet.create({
 			cols: 9,
 			frames: {count: 9, width: 50, height: 72, src: "dude_animation_sheet.png"},
@@ -19,14 +20,17 @@ var sprites = LightSpritesheet.create({
 			x: 0,
 			y: 0
 		});
-
+```
 Add add it to the manager
 
+```javascript
 manager.add(sprites);
-
+```
 Whenever you feel ready, start the manager:
 
+```javascript
 manager.start();
+```
 
 ## Light Manager Config
 These are the properties you can pass to the manager:
