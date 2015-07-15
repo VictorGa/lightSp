@@ -1,0 +1,19 @@
+{
+  "name": "ligthSp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "build": "uglifyjs src/LightManager.js src/LightSpritesheet.js -c > build/lightsp.min.js"
+  },
+  "author": "Victor Garrido Aguilar",
+  "devDependencies": {
+    "babelify": "^6.1.2",
+    "uglify-js": "^2.4.23"
+  },
+  "dependencies": {
+  },
+  "engines":{
+    "npm": "2.7.4"
+  }
+}
