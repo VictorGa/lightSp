@@ -16,6 +16,6 @@ These are the properties you can pass to the manager:
 
 - `fps`         : Frames per second which the animation will be drawn. - Default: `25`
 - `stage`     	: Contains the information about your canvas dom element`
-	- `effect`      : any jQuery effect that makes the images display (e.g. "fadeIn") - Default: `NULL`
-
-
+	- `width`      : your canvas total width - Default: `300`
+	- `height`      : your canvas total height - Default: `300`
+	- `canvas`      : HTML Canvas element
